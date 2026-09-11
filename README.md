@@ -1,4 +1,4 @@
-# Chicken 6 7 🎯
+# Chicken 6 7 🐔
 
 > **Where you and your food choose each other.**
 
