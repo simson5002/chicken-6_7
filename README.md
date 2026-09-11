@@ -132,14 +132,14 @@ For Software:
 
 # Diagrams
 
-![Workflow](Add workflow/architecture diagram here)
+![Workflow](src/assets/Workflow.jpeg)
 
 *The application flow starts with the landing page, moves through delivery-person discovery and selection, and continues into the food-ordering and delivery experience.*
 
 
 # Video
 
-[▶ Watch the Chicken 6 7 Demo Video](src/demo_video.mp4)
+[▶ Watch the Chicken 6 7 Demo Video](src/assets/DemoVideo.mp4)
 
 *The demo demonstrates the complete Chicken 6 7 experience, from discovering delivery persons and swiping through profiles to matching and completing the simulated food-delivery flow.*
 
