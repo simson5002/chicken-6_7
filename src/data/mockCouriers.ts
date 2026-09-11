@@ -23,7 +23,7 @@ export const MOCK_COURIERS: Courier[] = [
   {
     id: "c1",
     name: "Ramesh",
-    avatarUrl: "https://api.dicebear.com/9.x/adventurer/svg?seed=Ramesh&backgroundColor=fdf5e6&radius=50",
+    avatarUrl: "/delivery_boy_1_1789153296717.jpg",
     rating: 4.8,
     successfulDeliveries: 1432,
     distance: "0.2 km",
@@ -42,7 +42,7 @@ export const MOCK_COURIERS: Courier[] = [
   {
     id: "c2",
     name: "Sunil",
-    avatarUrl: "https://api.dicebear.com/9.x/adventurer/svg?seed=Sunil&backgroundColor=b6e3f4&radius=50",
+    avatarUrl: "/delivery_boy_2_1789153320287.jpg",
     rating: 3.2,
     successfulDeliveries: 12,
     distance: "2 km",
@@ -61,7 +61,7 @@ export const MOCK_COURIERS: Courier[] = [
   {
     id: "c3",
     name: "Priya",
-    avatarUrl: "https://api.dicebear.com/9.x/adventurer/svg?seed=Priya99&backgroundColor=d1d4f9&radius=50",
+    avatarUrl: "/delivery_girl_1_1789153307810.jpg",
     rating: 4.9,
     successfulDeliveries: 8900,
     distance: "Unknown",
@@ -80,7 +80,7 @@ export const MOCK_COURIERS: Courier[] = [
   {
     id: "c4",
     name: "Raj",
-    avatarUrl: "https://api.dicebear.com/9.x/adventurer/svg?seed=RajKumar&backgroundColor=c0aede&radius=50",
+    avatarUrl: "/delivery_boy_1_1789153296717.jpg",
     rating: 4.5,
     successfulDeliveries: 404,
     distance: "5 km",
@@ -99,7 +99,7 @@ export const MOCK_COURIERS: Courier[] = [
   {
     id: "c5",
     name: "Kavya",
-    avatarUrl: "https://api.dicebear.com/9.x/adventurer/svg?seed=Kavya21&backgroundColor=ffd5dc&radius=50",
+    avatarUrl: "/delivery_girl_2_1789153335971.jpg",
     rating: 4.1,
     successfulDeliveries: 88,
     distance: "1.2 km",
@@ -118,7 +118,7 @@ export const MOCK_COURIERS: Courier[] = [
   {
     id: "c6",
     name: "Arjun",
-    avatarUrl: "https://api.dicebear.com/9.x/adventurer/svg?seed=ArjunStar&backgroundColor=ffdfbf&radius=50",
+    avatarUrl: "/delivery_boy_2_1789153320287.jpg",
     rating: 3.7,
     successfulDeliveries: 230,
     distance: "0.8 km",
@@ -137,7 +137,7 @@ export const MOCK_COURIERS: Courier[] = [
   {
     id: "c7",
     name: "Sneha",
-    avatarUrl: "https://api.dicebear.com/9.x/adventurer/svg?seed=SnehaB&backgroundColor=c9ffd8&radius=50",
+    avatarUrl: "/delivery_girl_1_1789153307810.jpg",
     rating: 4.6,
     successfulDeliveries: 3100,
     distance: "1.5 km",
@@ -156,7 +156,7 @@ export const MOCK_COURIERS: Courier[] = [
   {
     id: "c8",
     name: "Vikram",
-    avatarUrl: "https://api.dicebear.com/9.x/adventurer/svg?seed=VikramX&backgroundColor=ffe4c4&radius=50",
+    avatarUrl: "/delivery_boy_1_1789153296717.jpg",
     rating: 2.9,
     successfulDeliveries: 7,
     distance: "3.5 km",
@@ -175,7 +175,7 @@ export const MOCK_COURIERS: Courier[] = [
   {
     id: "c9",
     name: "Meera",
-    avatarUrl: "https://api.dicebear.com/9.x/adventurer/svg?seed=MeeraJ&backgroundColor=f5cfe8&radius=50",
+    avatarUrl: "/delivery_girl_2_1789153335971.jpg",
     rating: 4.95,
     successfulDeliveries: 12000,
     distance: "0.4 km",
@@ -194,7 +194,7 @@ export const MOCK_COURIERS: Courier[] = [
   {
     id: "c10",
     name: "Dinesh",
-    avatarUrl: "https://api.dicebear.com/9.x/adventurer/svg?seed=DineshKV&backgroundColor=dfe9ff&radius=50",
+    avatarUrl: "/delivery_boy_2_1789153320287.jpg",
     rating: 4.3,
     successfulDeliveries: 650,
     distance: "2.2 km",
@@ -213,7 +213,7 @@ export const MOCK_COURIERS: Courier[] = [
   {
     id: "c11",
     name: "Tara",
-    avatarUrl: "https://api.dicebear.com/9.x/adventurer/svg?seed=TaraFly&backgroundColor=fde8c8&radius=50",
+    avatarUrl: "/delivery_girl_1_1789153307810.jpg",
     rating: 4.7,
     successfulDeliveries: 5400,
     distance: "0.9 km",
@@ -232,7 +232,7 @@ export const MOCK_COURIERS: Courier[] = [
   {
     id: "c12",
     name: "Karan",
-    avatarUrl: "https://api.dicebear.com/9.x/adventurer/svg?seed=KaranGo&backgroundColor=c8f0c8&radius=50",
+    avatarUrl: "/delivery_boy_1_1789153296717.jpg",
     rating: 3.9,
     successfulDeliveries: 410,
     distance: "1.8 km",
@@ -249,3 +249,4 @@ export const MOCK_COURIERS: Courier[] = [
     quirk: "Will ask if you want to hear the demo EP while he hands over the bag.",
   },
 ];
+

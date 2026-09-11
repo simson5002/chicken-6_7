@@ -1,18 +1,52 @@
 @import "tailwindcss";
 
 @theme {
-  --color-chicken-golden: #E69F00;
-  --color-chicken-crispy: #C66C00;
-  --color-chicken-spicy: #D92311;
-  --color-chicken-buttermilk: #FDF5E6;
-  --color-dark-bg: #111111;
-  --color-dark-panel: #1C1C1C;
+  --color-chicken-golden: #FF5A5F;
+  --color-chicken-crispy: #FF7E82;
+  --color-chicken-spicy: #E0484D;
+  --color-chicken-buttermilk: #F0F2F5;
+  
+  --color-app-bg: var(--theme-bg);
+  --color-app-panel: var(--theme-panel);
+  --color-app-text: var(--theme-text);
+  --color-app-text-muted: var(--theme-text-muted);
+  --color-app-border: var(--theme-border);
+  --color-app-gradient-start: var(--theme-gradient-start);
+  --color-app-gradient-mid: var(--theme-gradient-mid);
+  --color-app-gradient-end: var(--theme-gradient-end);
+  --color-app-accent-bg: var(--theme-accent-bg);
 
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  :root {
+    --theme-bg: #F7F7F9;
+    --theme-panel: #FFFFFF;
+    --theme-text: #111827;
+    --theme-text-muted: #6B7280;
+    --theme-border: #F3F4F6;
+    --theme-gradient-start: #fff1f2;
+    --theme-gradient-mid: #fff7ed;
+    --theme-gradient-end: #ffe4e6;
+    --theme-accent-bg: #fff7ed;
+  }
+
+  .dark {
+    --theme-bg: #0A0A0A;
+    --theme-panel: #171717;
+    --theme-text: #F9FAFB;
+    --theme-text-muted: #9CA3AF;
+    --theme-border: #262626;
+    --theme-gradient-start: #1A0500;
+    --theme-gradient-mid: #0D0500;
+    --theme-gradient-end: #250A00;
+    --theme-accent-bg: #260f00;
+  }
 
   *, *::before, *::after {
     box-sizing: border-box;
@@ -24,16 +58,14 @@
   }
 
   body {
-    @apply bg-dark-bg text-chicken-buttermilk antialiased;
+    @apply bg-app-bg text-app-text antialiased transition-colors duration-300;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Prevent text selection during swiping */
     user-select: none;
     -webkit-user-select: none;
   }
 
-  /* Allow text selection where needed */
   p, span, h1, h2, h3, h4, h5, h6 {
     user-select: text;
     -webkit-user-select: text;

@@ -22,17 +22,17 @@ export function MenuScreen({ courier, onCheckout }: MenuScreenProps) {
   const total = cart.reduce((sum, item) => sum + item.price, 0);
 
   return (
-    <div className="flex-1 w-full h-full bg-dark-bg flex flex-col relative">
+    <div className="flex-1 w-full h-full bg-app-bg flex flex-col relative">
       
       {/* Header */}
-      <div className="bg-dark-panel p-6 pb-4 pt-12 shadow-md z-10 rounded-b-3xl">
+      <div className="bg-app-panel p-6 pb-4 pt-12 shadow-sm z-10 rounded-b-3xl border-b border-app-border">
         <div className="flex items-center gap-4 mb-2">
           <img src={courier.avatarUrl} alt={courier.name} className="w-12 h-12 bg-chicken-buttermilk rounded-full border-2 border-chicken-golden" />
           <div>
-            <h2 className="text-xl font-bold text-white leading-tight">What can {courier.name} grab for you?</h2>
+            <h2 className="text-xl font-bold text-app-text leading-tight">What can {courier.name} grab for you?</h2>
           </div>
         </div>
-        <p className="text-sm text-gray-400 italic">"{courier.bio}"</p>
+        <p className="text-sm text-app-text-muted italic">"{courier.bio}"</p>
       </div>
 
       {/* Menu List */}
@@ -47,21 +47,21 @@ export function MenuScreen({ courier, onCheckout }: MenuScreenProps) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
                 onClick={() => toggleItem(item)}
-                className={`p-4 rounded-2xl cursor-pointer transition-all border-2 ${isSelected ? 'bg-chicken-golden/10 border-chicken-golden' : 'bg-dark-panel border-transparent'}`}
+                className={`p-4 rounded-2xl cursor-pointer transition-all border-2 ${isSelected ? 'bg-app-accent-bg border-chicken-golden' : 'bg-app-panel border-app-border shadow-sm'}`}
               >
                 <div className="flex gap-4 items-center">
-                  <div className="w-16 h-16 bg-chicken-buttermilk rounded-xl flex items-center justify-center shrink-0">
-                    <img src={item.imageUrl} alt={item.name} className="w-12 h-12" />
+                  <div className="w-16 h-16 bg-chicken-buttermilk rounded-xl flex items-center justify-center shrink-0 border border-app-border">
+                    <img src={item.imageUrl} alt={item.name} className="w-12 h-12 drop-shadow-sm" />
                   </div>
                   <div className="flex-1">
                     <div className="flex justify-between items-start">
-                      <h3 className="text-white font-bold text-lg leading-tight mb-1">{item.name}</h3>
+                      <h3 className="text-app-text font-bold text-lg leading-tight mb-1">{item.name}</h3>
                       <span className="text-chicken-golden font-bold">₹{item.price}</span>
                     </div>
-                    <p className="text-gray-400 text-sm leading-snug">{item.description}</p>
+                    <p className="text-app-text-muted text-sm leading-snug">{item.description}</p>
                   </div>
-                  <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${isSelected ? 'border-chicken-golden bg-chicken-golden' : 'border-gray-500'}`}>
-                    {isSelected && <span className="text-black text-xs font-bold">✓</span>}
+                  <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${isSelected ? 'border-chicken-golden bg-chicken-golden' : 'border-app-border'}`}>
+                    {isSelected && <span className="text-white text-xs font-bold">✓</span>}
                   </div>
                 </div>
               </motion.div>
@@ -93,3 +93,4 @@ export function MenuScreen({ courier, onCheckout }: MenuScreenProps) {
     </div>
   );
 }
+
