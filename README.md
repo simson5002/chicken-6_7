@@ -118,15 +118,15 @@ For Software:
 
 # Screenshots
 
-![Landing Page](Add screenshot of landing page here)
+![Landing Page](/src/assets/LandingPage.jpeg)
 
 *The Chicken 6 7 landing page introduces the completely unnecessary concept of choosing a delivery person instead of food.*
 
-![Delivery Person Selection](Add screenshot of swipe interface here)
+![Delivery Person Selection](/src/assets/DeliveryPersonSelection.jpeg)
 
 *Users browse delivery-person profiles and swipe left or right based on highly questionable compatibility criteria.*
 
-![Match Screen](Add screenshot of match screen here)
+![Match Screen](/src/assets/MatchScreen.jpeg)
 
 *The application celebrates when the user and their selected delivery person successfully match.*
 
@@ -139,7 +139,7 @@ For Software:
 
 # Video
 
-[Add your demo video link here]
+[▶ Watch the Chicken 6 7 Demo Video](src/demo_video.mp4)
 
 *The demo demonstrates the complete Chicken 6 7 experience, from discovering delivery persons and swiping through profiles to matching and completing the simulated food-delivery flow.*
 
