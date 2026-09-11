@@ -17,7 +17,7 @@ function StarRating({ rating }: { rating: number }) {
       {Array.from({ length: 5 }).map((_, i) => {
         const filled = i < full ? 1 : i === full && partial > 0 ? partial : 0;
         return (
-          <span key={i} className="relative text-gray-600 text-sm">
+          <span key={i} className="relative text-app-text-muted text-sm">
             ★
             <span
               className="absolute inset-0 overflow-hidden text-yellow-400 text-sm"
@@ -67,8 +67,8 @@ export function ProfileCard({ courier, active, onLeave }: ProfileCardProps) {
   return (
     <motion.div
       ref={cardRef}
-      className="absolute inset-0 w-full h-full rounded-3xl shadow-2xl overflow-hidden cursor-grab active:cursor-grabbing select-none"
-      style={{ x, rotate, backgroundColor: '#1a1a1a' }}
+      className="absolute inset-0 w-full h-full bg-app-panel rounded-3xl shadow-xl overflow-hidden cursor-grab active:cursor-grabbing select-none border border-app-border"
+      style={{ x, rotate }}
       drag={active ? 'x' : false}
       dragConstraints={{ left: 0, right: 0 }}
       dragElastic={0.7}
@@ -80,7 +80,7 @@ export function ProfileCard({ courier, active, onLeave }: ProfileCardProps) {
     >
       {/* NOPE stamp */}
       <motion.div
-        className="absolute top-10 right-6 border-4 border-chicken-spicy text-chicken-spicy font-black text-3xl px-4 py-1.5 rounded-xl rotate-12 z-30 pointer-events-none"
+        className="absolute top-10 right-6 border-4 border-chicken-spicy text-chicken-spicy font-black text-3xl px-4 py-1.5 rounded-xl rotate-12 z-30 pointer-events-none bg-app-panel/80 backdrop-blur-sm"
         style={{ opacity: nopeOpacity }}
         aria-hidden
       >
@@ -89,37 +89,35 @@ export function ProfileCard({ courier, active, onLeave }: ProfileCardProps) {
 
       {/* MATCH stamp */}
       <motion.div
-        className="absolute top-10 left-6 border-4 border-green-400 text-green-400 font-black text-3xl px-4 py-1.5 rounded-xl -rotate-12 z-30 pointer-events-none"
+        className="absolute top-10 left-6 border-4 border-green-400 text-green-400 font-black text-3xl px-4 py-1.5 rounded-xl -rotate-12 z-30 pointer-events-none bg-app-panel/80 backdrop-blur-sm"
         style={{ opacity: likeOpacity }}
         aria-hidden
       >
         MATCH!
       </motion.div>
 
-      {/* Avatar area */}
-      <div className="h-[55%] w-full bg-gradient-to-b from-[#2a1f0e] via-chicken-golden/20 to-transparent flex items-center justify-center pt-6 pb-2">
-        <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-chicken-golden shadow-2xl bg-chicken-buttermilk">
-          <img
-            src={courier.avatarUrl}
-            alt={courier.name}
-            className="w-full h-full object-cover"
-            draggable={false}
-            onError={(e) => {
-              // Fallback: hide broken image, show initials
-              (e.target as HTMLImageElement).style.display = 'none';
-            }}
-          />
-        </div>
+      {/* Avatar area (Full Bleed) */}
+      <div className="absolute inset-0 w-full h-full bg-app-bg">
+        <img
+          src={courier.avatarUrl}
+          alt={courier.name}
+          className="w-full h-full object-cover"
+          draggable={false}
+          onError={(e) => {
+            (e.target as HTMLImageElement).style.display = 'none';
+          }}
+        />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/30 to-transparent pointer-events-none" />
       </div>
 
       {/* Info overlay */}
-      <div className="absolute bottom-0 w-full h-[52%] bg-gradient-to-t from-[#0d0d0d] via-[#0d0d0ddd] to-transparent flex flex-col justify-end px-5 pb-5 pointer-events-none">
+      <div className="absolute bottom-0 w-full pt-32 bg-gradient-to-t from-black via-black/80 to-transparent flex flex-col justify-end px-5 pb-6 pointer-events-none">
         {/* Name + rating row */}
         <div className="flex items-end justify-between mb-1">
-          <h2 className="text-3xl font-extrabold text-chicken-golden leading-none drop-shadow-lg">
+          <h2 className="text-3xl font-extrabold text-white leading-none drop-shadow-md">
             {courier.name}
           </h2>
-          <Badge variant={compatibilityColor} className="text-sm px-3 py-1">
+          <Badge variant={compatibilityColor} className="text-sm px-3 py-1 shadow-sm">
             ♥ {courier.compatibility}%
           </Badge>
         </div>
@@ -127,28 +125,29 @@ export function ProfileCard({ courier, active, onLeave }: ProfileCardProps) {
         <StarRating rating={courier.rating} />
 
         {/* Stats row */}
-        <div className="flex gap-3 mt-2 mb-2 flex-wrap">
+        <div className="flex gap-3 mt-3 mb-3 flex-wrap">
           <Badge variant="muted">📍 {courier.distance}</Badge>
           <Badge variant="muted">⏱ {courier.avgDeliveryTime}</Badge>
           <Badge variant="gold">✓ {courier.successfulDeliveries.toLocaleString()} deliveries</Badge>
         </div>
 
         {/* Personality tag */}
-        <p className="text-chicken-spicy font-bold text-xs uppercase tracking-widest mb-1">
+        <p className="text-chicken-golden font-bold text-xs uppercase tracking-widest mb-1 drop-shadow-sm">
           {courier.deliveryPersonality}
         </p>
 
         {/* Bio */}
-        <p className="text-gray-300 text-sm leading-snug line-clamp-2 italic">
+        <p className="text-gray-200 text-sm leading-snug line-clamp-2 italic drop-shadow-sm">
           "{courier.bio}"
         </p>
 
         {/* Absurd fact chip */}
-        <div className="mt-2 bg-white/5 border border-white/10 rounded-xl px-3 py-1.5">
+        <div className="mt-3 bg-black/40 backdrop-blur-md border border-white/20 rounded-xl px-3 py-2">
           <span className="text-xs text-chicken-golden font-bold uppercase tracking-wider">Fun Fact · </span>
-          <span className="text-xs text-gray-400">{courier.absurdFact}</span>
+          <span className="text-xs text-app-text-muted">{courier.absurdFact}</span>
         </div>
       </div>
     </motion.div>
   );
 }
+

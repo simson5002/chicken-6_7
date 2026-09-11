@@ -89,7 +89,7 @@ export function CardStack({ couriers, onMatch, onExhausted }: CardStackProps) {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="flex flex-col items-center justify-center text-center gap-3 text-white/60 px-6"
+            className="flex flex-col items-center justify-center text-center gap-3 text-app-text-muted px-6"
           >
             <span className="text-5xl">🐔</span>
             <p className="text-xl font-bold text-chicken-golden">No more couriers.</p>
@@ -106,10 +106,10 @@ export function CardStack({ couriers, onMatch, onExhausted }: CardStackProps) {
           disabled={!canUndo}
           whileHover={canUndo ? { scale: 1.1 } : {}}
           whileTap={canUndo ? { scale: 0.9 } : {}}
-          className={`w-12 h-12 rounded-full flex items-center justify-center text-lg shadow-lg border transition-all
+          className={`w-12 h-12 rounded-full flex items-center justify-center text-lg shadow-sm border transition-all
             ${canUndo
-              ? 'bg-dark-panel border-chicken-golden/50 text-chicken-golden hover:border-chicken-golden'
-              : 'bg-dark-panel/30 border-white/10 text-white/20 cursor-not-allowed'
+              ? 'bg-app-panel border-chicken-golden/50 text-chicken-golden hover:border-chicken-golden'
+              : 'bg-app-bg border-app-border text-app-text-muted cursor-not-allowed'
             }`}
           title="Undo (go back)"
           aria-label="Undo last swipe"
@@ -123,10 +123,10 @@ export function CardStack({ couriers, onMatch, onExhausted }: CardStackProps) {
           disabled={isExhausted}
           whileHover={!isExhausted ? { scale: 1.12 } : {}}
           whileTap={!isExhausted ? { scale: 0.9 } : {}}
-          className={`w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-xl border-2 transition-all
+          className={`w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-md border-2 transition-all
             ${!isExhausted
-              ? 'bg-dark-panel border-chicken-spicy text-chicken-spicy hover:bg-chicken-spicy hover:text-white'
-              : 'opacity-30 cursor-not-allowed bg-dark-panel border-white/20 text-white/30'
+              ? 'bg-app-panel border-chicken-spicy text-chicken-spicy hover:bg-chicken-spicy hover:text-white'
+              : 'opacity-50 cursor-not-allowed bg-app-bg border-app-border text-app-text-muted'
             }`}
           aria-label="Skip courier (swipe left)"
           title="Skip (← arrow key)"
@@ -140,10 +140,10 @@ export function CardStack({ couriers, onMatch, onExhausted }: CardStackProps) {
           disabled={isExhausted}
           whileHover={!isExhausted ? { scale: 1.12 } : {}}
           whileTap={!isExhausted ? { scale: 0.9 } : {}}
-          className={`w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-xl border-2 transition-all
+          className={`w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-md border-2 transition-all
             ${!isExhausted
-              ? 'bg-dark-panel border-green-500 text-green-400 hover:bg-green-500 hover:text-white'
-              : 'opacity-30 cursor-not-allowed bg-dark-panel border-white/20 text-white/30'
+              ? 'bg-app-panel border-green-500 text-green-500 hover:bg-green-500 hover:text-white'
+              : 'opacity-50 cursor-not-allowed bg-app-bg border-app-border text-app-text-muted'
             }`}
           aria-label="Match with courier (swipe right)"
           title="Match (→ arrow key)"
@@ -153,9 +153,10 @@ export function CardStack({ couriers, onMatch, onExhausted }: CardStackProps) {
 
         {/* Info hint */}
         <div className="w-12 flex items-center justify-center">
-          <span className="text-white/20 text-xs text-center leading-tight">← →<br/>keys</span>
+          <span className="text-app-text-muted text-xs text-center leading-tight">← →<br/>keys</span>
         </div>
       </div>
     </div>
   );
 }
+

@@ -9,11 +9,11 @@ interface BadgeProps {
 }
 
 const variantClasses: Record<BadgeVariant, string> = {
-  gold: 'bg-chicken-golden/20 text-chicken-golden border border-chicken-golden/40',
-  spicy: 'bg-chicken-spicy/20 text-chicken-spicy border border-chicken-spicy/40',
-  muted: 'bg-white/10 text-gray-400 border border-white/10',
-  success: 'bg-green-500/20 text-green-400 border border-green-500/30',
-  dark: 'bg-dark-panel text-chicken-buttermilk border border-white/10',
+  gold: 'bg-app-accent-bg text-chicken-golden border border-orange-200',
+  spicy: 'bg-red-50 text-chicken-spicy border border-red-200',
+  muted: 'bg-app-border text-app-text-muted border border-app-border',
+  success: 'bg-green-50 text-green-600 border border-green-200',
+  dark: 'bg-gray-900 text-white border border-gray-800',
 };
 
 export function Badge({ children, variant = 'muted', className = '' }: BadgeProps) {
@@ -25,3 +25,4 @@ export function Badge({ children, variant = 'muted', className = '' }: BadgeProp
     </span>
   );
 }
+

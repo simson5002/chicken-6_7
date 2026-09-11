@@ -51,7 +51,7 @@ export function MatchScreen({ courier, onContinue }: MatchScreenProps) {
 
       <motion.button 
         onClick={onContinue}
-        className="w-full bg-white text-chicken-spicy p-4 rounded-full font-bold text-xl shadow-2xl hover:scale-105 transition-transform uppercase tracking-wider"
+        className="w-full bg-app-panel text-chicken-spicy p-4 rounded-full font-bold text-xl shadow-2xl hover:scale-105 transition-transform uppercase tracking-wider"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ type: "spring", bounce: 0.5, delay: 1 }}
@@ -61,3 +61,4 @@ export function MatchScreen({ courier, onContinue }: MatchScreenProps) {
     </div>
   );
 }
+
